@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{203773E7-EF40-40FD-B89D-22914B141D91}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>myproject</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="opencv_prop\opencv2_debug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="opencv_prop\opencv2_release.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ErosionAndDilation.cpp" />
+    <ClCompile Include="package_analysis\ForegroundMaskAnalysis.cpp" />
+    <ClCompile Include="package_bgs\AdaptiveBackgroundLearning.cpp" />
+    <ClCompile Include="package_bgs\AdaptiveSelectiveBackgroundLearning.cpp" />
+    <ClCompile Include="package_bgs\FrameDifferenceBGS.cpp" />
+    <ClCompile Include="package_bgs\FrameDifferenceBGSExt.cpp" />
+    <ClCompile Include="package_bgs\GMG.cpp" />
+    <ClCompile Include="package_bgs\MixtureOfGaussianV1BGS.cpp" />
+    <ClCompile Include="package_bgs\MixtureOfGaussianV2BGS.cpp" />
+    <ClCompile Include="package_bgs\StaticFrameDifferenceBGS.cpp" />
+    <ClCompile Include="package_bgs\WeightedMovingMeanBGS.cpp" />
+    <ClCompile Include="package_bgs\WeightedMovingVarianceBGS.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="package_analysis\ForegroundMaskAnalysis.h" />
+    <ClInclude Include="package_bgs\AdaptiveBackgroundLearning.h" />
+    <ClInclude Include="package_bgs\AdaptiveSelectiveBackgroundLearning.h" />
+    <ClInclude Include="package_bgs\FrameDifferenceBGS.h" />
+    <ClInclude Include="package_bgs\FrameDifferenceBGSExt.h" />
+    <ClInclude Include="package_bgs\GMG.h" />
+    <ClInclude Include="package_bgs\IBGS.h" />
+    <ClInclude Include="package_bgs\MixtureOfGaussianV1BGS.h" />
+    <ClInclude Include="package_bgs\MixtureOfGaussianV2BGS.h" />
+    <ClInclude Include="package_bgs\StaticFrameDifferenceBGS.h" />
+    <ClInclude Include="package_bgs\WeightedMovingMeanBGS.h" />
+    <ClInclude Include="package_bgs\WeightedMovingVarianceBGS.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
